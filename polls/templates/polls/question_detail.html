@@ -1,0 +1,27 @@
+<body style="background-image:url('https://i.imgur.com/MHmUAd3.jpg')">
+{%if count == 0 %}
+<br>
+<h1>{{question.question_text}}</h1>
+
+{% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id username %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all%}
+    <br>
+    <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
+    <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
+{% endfor %}
+<br>
+<input type="submit" value="선택">
+</form>
+{%endif%}
+
+{%if count != 0%}
+<br><br><br>
+<h1><p style="text-align:center;font-size: 30pt; color: rgb(68, 51, 100); ">1단계 검사 완료</p></h1>
+<br><br>
+<br>
+<a href="{%url 'dface' username %}"><h2>다음검사를 진행해주세요</h2></a>
+{%endif%}
+</body>

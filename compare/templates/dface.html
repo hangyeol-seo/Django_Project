@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-image:url('https://i.imgur.com/MHmUAd3.jpg')">
+<head>
+    <h1><p style="text-align:center;font-size: 30pt; color: rgb(68, 51, 100); ">2. 나와 닮은 캐릭터 찾기</p></h1>
+    <br><br>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document</title>
+</head>
+{% if not post %}
+<body>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br><br>
+    <button type="submit" class="save btn btn-default" value="" upload><h3>사진 업로드</h3></button>
+    <br><br>
+</form>
+{% endif %}
+    {% if post %}
+    <h1>검사 종료</h1>
+    <br>
+    <h2>결과는 게시물 작성 후 확인 가능합니다.</h2>
+    <br>
+    <a href="{% url 'new' username %}"><h2>게시물 작성</h2></a>
+    {% endif %}
+    <br>
+    <br>
+</body>
+</body>
+</html>
+
+    

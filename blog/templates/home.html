@@ -1,0 +1,22 @@
+<body style="background-image:url('https://i.imgur.com/MHmUAd3.jpg')">
+<br>
+<h1><p style="text-align:center;font-size: 40pt; color: rgb(68, 51, 100); ">*나는 어떤 사람일까?*</p></h1>
+<div style="width: 20%; height:10px; float: right;">
+<a href="{%url 'polls:index' username%}"><h1>검사 시작</h1></a>
+
+</div>
+<h4>현재 계정 : {{username}}</h4>
+<a href="{%url 'logout'%}"><h4>로그아웃</h4></a>
+<br><br>
+{% for blog in blogs.all %}
+<h1>{{blog.title}}</h1>
+<p>작성자: {{blog.writer}} <br><br>작성날짜: {{blog.pub_date}}</p>
+<p>{{blog.summary}}<a href="{% url 'detail' blog.id username %}"><br>...more</a></p>
+<br>
+<br>
+{%endfor%}
+<br>
+
+
+
+</body>

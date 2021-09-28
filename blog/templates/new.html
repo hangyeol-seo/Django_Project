@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body style="background-image:url('https://i.imgur.com/MHmUAd3.jpg')">
+<div class="container">
+    <form action="{%url 'create' username %}">
+        <h1><p style="text-align:left;font-size: 30pt; color: rgb(68, 51, 100); ">제목</p></h1>
+        <input type="text" name='title'>
+        <br>
+        <br>
+        <h1><p style="text-align:left;font-size: 30pt; color: rgb(68, 51, 100); ">본문</p></h1>
+        <textarea name="body" id="" cols="40" row="10"></textarea>
+        <br><br><br>
+        <input class="btn btn-dark" type="submit" value="작성하기"> 
+    </form>
+
+</div>
+</body>
+{% endblock %}
