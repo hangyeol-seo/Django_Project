@@ -7,5 +7,6 @@
 ![image](https://user-images.githubusercontent.com/89198489/135073183-6bf1df3b-a0b4-42b6-b3de-cd308e6c7468.png)   
 
 
+## 설명
 
-[설명](./db_final_report.docx)
+[프로젝트_보고서](./db_final_report.docx)
